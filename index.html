@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AUDOR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Bungee', sans-serif;
+      background-color: white;
+      overflow-x: hidden;
+    }
+
+    /* INTRO SCREEN */
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+    #intro img {
+      width: 300px;
+      max-width: 80%;
+    }
+
+    /* MAIN PAGE */
+    #main-content {
+      display: none;
+    }
+
+    header {
+      height: 100vh;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 20px;
+      z-index: 1;
+    }
+    nav a {
+      text-decoration: underline;
+      color: black;
+    }
+
+    .hero {
+      text-align: center;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+      color: black;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      color: black;
+    }
+
+    .info-section {
+      display: flex;
+      padding: 60px;
+    }
+
+    .info-section img {
+      max-width: 300px;
+      margin-right: 40px;
+    }
+
+    .info-section div h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .info-section div p,
+    .info-section div li {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .social-icons img {
+      width: 24px;
+      margin: 0 10px;
+    }
+
+    .bottom-bar {
+      background: black;
+      color: white;
+      font-size: 12px;
+      padding: 5px 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- INTRO IMAGE -->
+  <div id="intro">
+    <img src="Fauget.png" alt="Intro">
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div id="main-content">
+    <header>
+      <div id="particles-js"></div>
+      <nav><a href="#contact">CONTACT</a></nav>
+      <div class="hero">
+        <h1>AUDOR</h1>
+        <p>EXCLUSIVE DISTRIBUTOR</p>
+      </div>
+    </header>
+
+    <section class="info-section">
+      <img src="/path/to/vinyl.png" alt="Vinyl"/>
+      <div>
+        <h2>AUDOR – A TRUSTED MUSIC DISTRIBUTION PARTNER</h2>
+        <p>IN THE DIGITAL AGE...</p>
+        <ul>
+          <li>FAST, TRANSPARENT MUSIC DISTRIBUTION</li>
+          <li>REAL-TIME REVENUE TRACKING</li>
+          <li>ARTIST COPYRIGHT PROTECTION</li>
+          <li>BRANDING CONSULTATION</li>
+        </ul>
+        <p>WE BELIEVE EVERY ARTIST...</p>
+      </div>
+    </section>
+
+    <footer>
+      <h1>AUDOR</h1>
+      <p>© 2025 AUDOR. ALL RIGHTS RESERVED. LICENSED BY NNV.</p>
+      <div class="social-icons">
+        <img src="/path/to/youtube.png" alt="YouTube">
+        <img src="/path/to/instagram.png" alt="Instagram">
+        <img src="/path/to/facebook.png" alt="Facebook">
+      </div>
+    </footer>
+
+    <div class="bottom-bar">
+      <span>Điều khoản và hỗ trợ</span>
+      <span>Thiết kế bởi AUDOR</span>
+    </div>
+  </div>
+
+  <!-- PARTICLES JS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    // Fade out intro
+    window.addEventListener('load', () => {
+      const intro = document.getElementById('intro');
+      const main = document.getElementById('main-content');
+
+      setTimeout(() => {
+        intro.style.opacity = '0';
+        setTimeout(() => {
+          intro.style.display = 'none';
+          main.style.display = 'block';
+        }, 1000);
+      }, 2200); // Delay before fade (2.2s)
+    });
+
+    // Particles config
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 40 },
+        color: { value: '#22121c' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.4 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1 }
+      }
+    });
+  </script>
+</body>
+</html>
